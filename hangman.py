@@ -92,3 +92,76 @@ def ask_for_input():
 
 # Step 3 (in milestone_3.py)
 ask_for_input()
+
+
+# milestone_4.py
+
+# Step 1
+class Hangman:
+    # Step 2
+    def __init__(self, word_list, num_lives=5):
+        # Step 3
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_'] * len(self.word)
+        self.num_letters = len(set(self.word))
+        self.num_lives = num_lives
+        self.word_list = word_list
+        self.list_of_guesses = []
+
+# Task 2: Create methods for running the checks
+# Step 1 (in milestone_4.py)
+    def check_guess(self, guess):
+        # Step 2
+        guess = guess.lower()
+
+        # Step 3 (continued)
+        if guess.isalpha() and len(guess) == 1:
+            # Step 4 (continued in milestone_4.py)
+            if guess in self.word:
+                # Step 3 (continued)
+                print(f"Good guess! {guess} is in the word.")
+                for i, letter in enumerate(self.word):
+                    if letter == guess:
+                        self.word_guessed[i] = guess
+                        self.num_letters -= 1
+            else:
+                # Step 4 (continued)
+                self.num_lives -= 1
+                print(f"Sorry, {guess} is not in the word. You have {self.num_lives} lives left.")
+
+# Step 2 (continued)
+    def ask_for_input(self):
+        # Step 1
+        while True:
+            # Step 2
+            guess = input("Guess a letter: ")
+
+            # Step 3
+            if guess.isalpha() and len(guess) == 1:
+                # Step 4
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+            else:
+                # Step 5
+                print("Invalid letter. Please, enter a single alphabetical character.")
+
+# milestone_4.py
+
+# Task 3 (in check_guess method, after Step 3)
+            self.num_letters -= 1
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                   self.word_guessed[i] = guess
+
+
+
+# milestone_4.py
+
+# Task 4 (in check_guess method, after Step 3)
+            else:
+                self.num_lives -= 1
+                print(f"Sorry, {guess} is not in the word. You have {self.num_lives} lives left.")
+
+
+
