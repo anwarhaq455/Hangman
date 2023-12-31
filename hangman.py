@@ -186,4 +186,9 @@ def play_game(word_list):
 # Step 2
 play_game(word_list)
 
+#DESCREPTION:
+#In this game there is 5 fruit name when run the programe computer pick one fruit from the 5 fruit in the list each time and ask you to guess the fruit letter
+#and if you Guess corettly give you message its correct other wise ask you try again and give you five live to guess if you are wrong if you guess right you won other wise give you message you lost
 
+
+ 
