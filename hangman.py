@@ -164,4 +164,26 @@ class Hangman:
                 print(f"Sorry, {guess} is not in the word. You have {self.num_lives} lives left.")
 
 
+# milestone_5.py
+
+# Step 1
+def play_game(word_list):
+    # Step 2
+    num_lives = 5
+    game = Hangman(word_list, num_lives)
+
+    # Step 3
+    while True:
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
+        else:
+            print("Congratulations. You won the game!")
+            break
+
+# Step 2
+play_game(word_list)
+
 
